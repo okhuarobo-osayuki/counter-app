@@ -1,0 +1,57 @@
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #000;
+    border-color: #000 transparent #000 transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  @media screen and (max-width: 367px) {
+    .loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      top: 20rem;
+      left: 7rem;
+    }
+  
+    .lds-dual-ring {
+      width: 90px;
+      height: 90px;
+    }
+  }
+  
+  @media screen and (min-width: 368px) {
+    .loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      top: 20rem;
+      left: 45rem;
+    }
+  
+    .lds-dual-ring {
+      width: 90px;
+      height: 90px;
+    }  
+  }
