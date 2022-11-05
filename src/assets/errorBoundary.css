@@ -25,11 +25,11 @@
 
 @media screen and (max-width: 367px) {
     .errFallBack{
-        height: 80.8vh;
+        height: 75.8vh;
     }
     
     .container{
-        padding: 50px 50px;
+        padding: 90px 50px;
         gap: 2rem;
     }
     
