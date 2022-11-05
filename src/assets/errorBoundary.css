@@ -24,7 +24,8 @@
 
 @media screen and (max-width: 367px) {
   .errFallBack {
-    height: 75.8vh;
+    height: 90vh;
+    overflow: hidden;
   }
 
   .container {
