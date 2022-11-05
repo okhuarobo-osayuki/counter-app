@@ -1,7 +1,7 @@
-:root{
-    --primary-font: 'Poppins', sans-serif;
-    --error-font-1: 'Kavoon', cursive;
-    --error-font-2: 'Yatra One', cursive;
+:root {
+  --primary-font: "Poppins", sans-serif;
+  --error-font-1: "Kavoon", cursive;
+  --error-font-2: "Yatra One", cursive;
 }
 
 * {
@@ -43,4 +43,92 @@ nav a {
 nav a:hover {
   text-decoration: underline;
   border: none;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  top: 7rem;
+}
+
+.counter-value {
+  font-size: 3rem;
+
+}
+
+.set-value-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.set-value-input input[type="number"] {
+  padding: 10px 15px;
+  font-size: 1rem;
+}
+.set-value-input input[type="number"]:focus {
+  outline: none;
+}
+
+.set-value-input input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+.set-value-input button {
+  background-color: rgb(66, 235, 66);
+  color: #000;
+  padding: 20px 25px;
+  border: none;
+  border-radius: 10px;
+  margin: 20px 10px;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: var(--error-font-2);
+}
+
+.set-value-input button:hover {
+  background-color: lightgreen;
+  border: 0.5px solid rgb(66, 235, 66);
+}
+
+.buttons {
+  display: flex;
+}
+
+.btn {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 30px;
+  border: none;
+  border-radius: 10px;
+  margin: 20px 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  font-family: var(--error-font-2);
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #000;
+  border: 0.5px solid #000;
+}
+
+.reset {
+  background-color: red;
+}
+
+.reset:hover {
+  color: red;
+  border: 0.5px solid red;
+}
+
+@media screen and (max-width: 367px) {
+  .buttons,
+  .set-value-input {
+    flex-direction: column;
+  }
 }
