@@ -1,92 +1,97 @@
-.errFallBack{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    gap: 1rem;
-    background-image: url(../assets/images/error-img.jpg);
-    background-blend-mode: darken;
-    background-color: rgba(0, 0, 0, 0.5);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 85.8vh;
+.errFallBack {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 1rem;
+  background-image: url(../assets/images/error-img.jpg);
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.5);
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 @media screen and (max-width: 367px) {
-    .errFallBack{
-        height: 75.8vh;
-    }
-    
-    .container{
-        padding: 90px 50px;
-        gap: 2rem;
-    }
-    
-    .errFallBack h1{
-        font-size: 2rem;
-        font-family: var(--error-font-2);
-    }
-    
-    .errFallBack h1, .errFallBack pre, .errFallBack button{
-        font-family: var(--error-font-1);
-    }
-    
-    .errFallBack pre{
-        font-size: 1rem;
-    }
-    
-    .errFallBack button{
-        background-color: rgba(144, 238, 144, 0.3);
-        color: #000;
-        border: 0.5px solid #000;
-        padding: 20px 30px;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: 0.5s;
-        font-size: 0.9rem;
-    }
-    
+  .errFallBack {
+    height: 75.8vh;
+  }
+
+  .container {
+    padding: 90px 50px;
+    gap: 2rem;
+  }
+
+  .errFallBack h1 {
+    font-size: 2rem;
+    font-family: var(--error-font-2);
+  }
+
+  .errFallBack h1,
+  .errFallBack pre,
+  .errFallBack button {
+    font-family: var(--error-font-1);
+  }
+
+  .errFallBack pre {
+    font-size: 1rem;
+  }
+
+  .errFallBack button {
+    background-color: rgba(144, 238, 144, 0.3);
+    color: #000;
+    border: 0.5px solid #000;
+    padding: 20px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 0.9rem;
+  }
 }
 
 @media screen and (min-width: 368px) {
-    .container{
-        padding: 150px 150px;
-        gap: 2rem;
-    }
-    
-    .errFallBack h1{
-        font-size: 3rem;
-        font-family: var(--error-font-2);
-    }
-    
-    .errFallBack h1, .errFallBack pre, .errFallBack button{
-        font-family: var(--error-font-1);
-    }
-    
-    .errFallBack pre{
-        font-size: 1.4rem;
-    }
-    
-    .errFallBack button{
-        background-color: rgba(144, 238, 144, 0.3);
-        color: #000;
-        border: 0.5px solid #000;
-        padding: 20px 30px;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: 0.5s;
-        font-size: 1.2rem;
-    }
-    
+  .errFallBack {
+    height: 85.8vh;
+  }
+
+  .container {
+    padding: 150px 150px;
+    gap: 2rem;
+  }
+
+  .errFallBack h1 {
+    font-size: 3rem;
+    font-family: var(--error-font-2);
+  }
+
+  .errFallBack h1,
+  .errFallBack pre,
+  .errFallBack button {
+    font-family: var(--error-font-1);
+  }
+
+  .errFallBack pre {
+    font-size: 1.4rem;
+  }
+
+  .errFallBack button {
+    background-color: rgba(144, 238, 144, 0.3);
+    color: #000;
+    border: 0.5px solid #000;
+    padding: 20px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 1.2rem;
+  }
 }
