@@ -13,6 +13,7 @@ function RouteApp() {
         <Route path="/" element={<Home />} />
         <Route path="/pages/404" element={<NotFoundPage />} />
         <Route path="/pages/errorBoundary" element={<ErrFallBack />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Suspense>
   );
