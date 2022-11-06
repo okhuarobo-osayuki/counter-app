@@ -8,7 +8,7 @@ function NotFoundPage() {
     <Helmet>
       <title>404 page</title>
       <meta name="description" content="404 page for catching any routing error occurring in react caused by the user" />
-      <link rel="canonical" href="/404" />
+      <link rel="canonical" href="/pages/404" />
     </Helmet>
     <section className="four-0-four">
       <nav>

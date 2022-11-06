@@ -10,7 +10,7 @@ const ErrorFallback = ({ error, resetErrorBoundary }) => {
     <Helmet>
       <title>Error Boundary</title>
       <meta name="description" content="A page for testing react error boundary for any error occurring in react" />
-      <link rel="canonical" href="/errorBoundary" />
+      <link rel="canonical" href="/pages/errorBoundary" />
     </Helmet>
     <div role="alert" className="errFallBack">
       <div className="container">
