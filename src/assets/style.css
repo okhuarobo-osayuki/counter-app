@@ -23,8 +23,6 @@ nav {
   flex-wrap: wrap;
   gap: 0.7rem;
   box-shadow: -1px 5px 7px -1px rgba(0, 0, 0, 1);
-  -webkit-box-shadow: -1px 5px 7px -1px rgba(0, 0, 0, 1);
-  -moz-box-shadow: -1px 5px 7px -1px rgba(0, 0, 0, 1);
   padding: 1.3rem;
   position: relative;
   z-index: 1;
@@ -88,6 +86,7 @@ nav a:hover {
   cursor: pointer;
   font-weight: 500;
   font-family: var(--error-font-2);
+  font-size: 1rem;
 }
 
 .set-value-input button:hover {
@@ -109,6 +108,7 @@ nav a:hover {
   cursor: pointer;
   transition: 0.5s;
   font-family: var(--error-font-2);
+  font-size: 1rem;
 }
 
 .btn:hover {
@@ -119,6 +119,7 @@ nav a:hover {
 
 .reset {
   background-color: red;
+  color: #000;
 }
 
 .reset:hover {
