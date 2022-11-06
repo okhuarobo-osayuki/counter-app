@@ -23,7 +23,7 @@ function NotFoundPage() {
         <NavLink to={"/pages/errorBoundary"}>Test Error Boundary</NavLink>
       </nav>
 
-        <div class="four-0-four-img">
+        <div className="four-0-four-img">
           <img
             src="https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif"
             alt="Cave Man"
