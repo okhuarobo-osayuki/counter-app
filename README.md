@@ -14,7 +14,7 @@
 
 ### Links
 
-- Code Solution URL: [React-Counter-App-Code](https://github.com/okhuarobo-osayuki/counter-app)
+- Solution Code URL: [React-Counter-App-Code](https://github.com/okhuarobo-osayuki/counter-app)
 - Live Site URL: https://counter-app-eight-silk.vercel.app/
 
 ## My process
