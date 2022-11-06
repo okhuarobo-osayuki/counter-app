@@ -1,10 +1,17 @@
 import React from "react";
 import { ErrorBoundary } from "react-error-boundary";
+import { Helmet } from "react-helmet-async";
 import { NavLink, useNavigate } from "react-router-dom";
 import "../assets/errorBoundary.css";
 
 const ErrorFallback = ({ error, resetErrorBoundary }) => {
   return (
+    <>
+    <Helmet>
+      <title>Error Boundary</title>
+      <meta name="description" content="A page for testing react error boundary for any error occurring in react" />
+      <link rel="canonical" href="/errorBoundary" />
+    </Helmet>
     <div role="alert" className="errFallBack">
       <div className="container">
         <h1 className="errFallBack_para" style={{ color: "red" }}>OOPs! Something went wrong</h1>
@@ -12,6 +19,7 @@ const ErrorFallback = ({ error, resetErrorBoundary }) => {
         <button onClick={resetErrorBoundary}>Reset</button>
       </div>
     </div>
+    </>
   );
 };
 

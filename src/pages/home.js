@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { NavLink } from "react-router-dom";
 import "../assets/style.css";
 import useCounter from "../hooks/useCounter";
@@ -5,6 +6,12 @@ import useCounter from "../hooks/useCounter";
 function Home() {
   const [state, increment, decrement, reset, setValue, inputRef] = useCounter();
   return (
+    <>
+    <Helmet>
+      <title>Home</title>
+      <meta name="description" content="Counter App using React hooks and custom hooks to increase, decrease, reset and set value of the count." />
+      <link rel="canonical" href="/home" />
+    </Helmet>
     <div className="home">
       <nav>
         <NavLink
@@ -38,6 +45,7 @@ function Home() {
         </div>
       </main>
     </div>
+    </>
   );
 }
 
