@@ -17,7 +17,7 @@
 ### Links
 
 - Code Solution URL: [React-Counter-App-Code](https://github.com/okhuarobo-osayuki/counter-app)
-- Live Site URL: [![Vercel Badge](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white&link=https://counter-app-eight-silk.vercel.app/)](https://counter-app-eight-silk.vercel.app/)
+- Live Site URL: https://counter-app-eight-silk.vercel.app/
 
 ## My process
 
@@ -34,6 +34,6 @@
 
 ## Author
 
-Portfolio - [![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&link=https://github.com/okhuarobo-osayuki)](https://github.com/okhuarobo-osayuki)
-Twitter - [![Twitter Badge](https://img.shields.io/badge/-@osayuki__-1ca0f1?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/osayuki__)](https://twitter.com/osayuki__)
-LinkedIn - [![Linkedin Badge](https://img.shields.io/badge/osayukiokhuarobo-blue?style=for-the-badge&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/osayuki-raymond-okhuarobo/)](https://www.linkedin.com/in/osayuki-raymond-okhuarobo/)
+[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&link=https://github.com/okhuarobo-osayuki)](https://github.com/okhuarobo-osayuki)
+[![Twitter Badge](https://img.shields.io/badge/-@osayuki__-1ca0f1?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/osayuki__)](https://twitter.com/osayuki__)
+[![Linkedin Badge](https://img.shields.io/badge/osayukiokhuarobo-blue?style=for-the-badge&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/osayuki-raymond-okhuarobo/)](https://www.linkedin.com/in/osayuki-raymond-okhuarobo/)
