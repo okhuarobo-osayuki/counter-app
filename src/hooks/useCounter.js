@@ -26,8 +26,8 @@ const useCounter = (initialState) => {
         if (inputRef.current.value === "") {
             return state.count;
         } else {
-            dispatch({ type: "setValue", payload: inputRef.current.value });
-            console.log(inputRef.current.props);
+            dispatch({ type: "setValue", payload: Number(inputRef.current.value) });
+            inputRef.current.value = "";
         }
     };
 
