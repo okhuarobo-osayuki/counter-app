@@ -1,0 +1,3 @@
+https://counter-app-eight-silk.vercel.app/
+https://counter-app-eight-silk.vercel.app/pages/404
+https://counter-app-eight-silk.vercel.app/pages/errorBoundary
