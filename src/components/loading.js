@@ -1,7 +1,15 @@
 import React from "react";
-import '../assets/loading.css';
+import "../assets/loading.css";
 
 function Loading() {
-  return <div className="lds-dual-ring loader"></div>;
+  return (
+    <div className="loading">
+      <div className="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  );
 }
 export default Loading;
