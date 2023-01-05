@@ -1,37 +1,36 @@
-import { useRef } from "react";
-import useCounterReducer from "./reducer";
+import { useRef, useState } from "react";
 
-const useCounter = (initialState) => {
-    const [state, dispatch] = useCounterReducer(initialState || { count: 0 });
+const useCounter = () => {
+    const [count, setCount] = useState(0);
 
     const inputRef = useRef(null);
 
     const increment = () => {
-        dispatch({ type: "increment" });
+        setCount(prev => prev + 1)
     };
 
     const decrement = () => {
-        if (state.count > 0) {
-            dispatch({ type: "decrement" });
+        if (count > 0) {
+            setCount(prev => prev - 1)
         } else {
-            return state.count;
+            return 
         }
     };
 
     const reset = () => {
-        dispatch({ type: "reset" });
+        setCount(0);
     };
 
     const setValue = () => {
         if (inputRef.current.value === "") {
-            return state.count;
+            return count;
         } else {
-            dispatch({ type: "setValue", payload: Number(inputRef.current.value) });
+            setCount(Number(inputRef.current.value));
             inputRef.current.value = "";
         }
     };
 
-    return [state, increment, decrement, reset, setValue, inputRef];
+    return [count, increment, decrement, reset, setValue, inputRef];
 }
 
 export default useCounter;
