@@ -2,7 +2,7 @@ import React from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { Helmet } from "react-helmet-async";
 import { NavLink, useNavigate } from "react-router-dom";
-import "../assets/errorBoundary.css";
+import "../assets/css/errorBoundary.css";
 
 const ErrorFallback = ({ error, resetErrorBoundary }) => {
   return (

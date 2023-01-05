@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { NavLink, Link } from "react-router-dom";
-import '../assets/404.css';
+import '../assets/css/404.css';
 
 function NotFoundPage() {
   return (

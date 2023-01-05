@@ -1,5 +1,5 @@
-import "./assets/style.css";
-import "./assets/errorBoundary.css";
+import "./assets/css/style.css";
+import "./assets/css/errorBoundary.css";
 import RouteApp from "./routes/routes";
 import Loading from "./components/loading";
 import { useState } from "react";
