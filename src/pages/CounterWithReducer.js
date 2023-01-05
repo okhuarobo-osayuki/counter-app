@@ -33,7 +33,7 @@ function CounterWithReducer() {
 
   return (
       <main className="content">
-        <p className="counter-value">Count: {state.count}</p>
+        <p className="counter-value">your count is: {state.count}</p>
         <div className="set-value-input">
           <input
             ref={inputRef}
