@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { NavLink } from "react-router-dom";
-import "../assets/style.css";
+import "../assets/css/style.css";
 import useCounter from "../hooks/useCounter";
 
 function Home() {
@@ -13,24 +12,6 @@ function Home() {
       <link rel="canonical" href="/home" />
     </Helmet>
     <div className="home">
-      <nav>
-        <NavLink
-          style={({ isActive }) =>
-            isActive
-              ? {
-                  backgroundColor: "#000",
-                  color: "#fff",
-                  textDecoration: "none",
-                }
-              : { backgroundColor: "#fff", color: "#000" }
-          }
-          to={"/"}
-        >
-          Home
-        </NavLink>
-        <NavLink to={"/pages/404"}>See 404 Page</NavLink>
-        <NavLink to={"/pages/errorBoundary"}>Test Error Boundary</NavLink>
-      </nav>
 
       <main className="content">
         <p className="counter-value">Count: {state.count}</p>
