@@ -1,8 +1,9 @@
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import { Outlet } from "react-router-dom";
 import "../assets/css/style.css";
 import { NavBarLink } from "../components/header";
+import Loading from "../components/loading";
 
 const CounterWithReducer = lazy(() => import("./CounterWithReducer"));
 const CounterWithCustomHook = lazy(() => import("./CounterWithCustomHook"));
@@ -19,18 +20,24 @@ function Home() {
         />
         <link rel="canonical" href="/home" />
       </Helmet>
-      <section className="child-nav">
-        <NavBarLink
-          to={"/pages/CounterWithReducer"}
-          element={<CounterWithReducer />}
-          className="child-nav-link"
-        >
-          Counter with Reducer
-        </NavBarLink>
-        <NavBarLink to={"/pages/CounterWithCustomHook"} element={<CounterWithCustomHook />} className="child-nav-link">
-          Counter with Custom Hook
-        </NavBarLink>
-      </section>
+      <Suspense fallback={<Loading />}>
+        <section className="child-nav">
+          <NavBarLink
+            to={"/pages/CounterWithReducer"}
+            element={<CounterWithReducer />}
+            className="child-nav-link"
+          >
+            Counter with Reducer
+          </NavBarLink>
+          <NavBarLink
+            to={"/pages/CounterWithCustomHook"}
+            element={<CounterWithCustomHook />}
+            className="child-nav-link"
+          >
+            Counter with Custom Hook
+          </NavBarLink>
+        </section>
+      </Suspense>
       {/* <div className="home">
       <main className="content">
         <p className="counter-value">Count: {state.count}</p>
