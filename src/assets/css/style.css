@@ -18,7 +18,7 @@ a {
 .child-nav{
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   flex-wrap: wrap;
   margin: 4rem 1rem;
   gap: 2rem;
@@ -126,5 +126,15 @@ a {
   .buttons,
   .set-value-input {
     flex-direction: column;
+  }
+}
+
+@media  screen and (max-width: 574px) {
+  .child-nav{
+    flex-direction: column;
+  }
+
+  li{
+    margin: 0.5rem 0;
   }
 }
