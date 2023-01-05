@@ -12,7 +12,6 @@ function Home() {
       <link rel="canonical" href="/home" />
     </Helmet>
     <div className="home">
-
       <main className="content">
         <p className="counter-value">Count: {state.count}</p>
         <div className="set-value-input">

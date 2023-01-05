@@ -1,7 +1,7 @@
 import React from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { Helmet } from "react-helmet-async";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../assets/css/errorBoundary.css";
 
 const ErrorFallback = ({ error, resetErrorBoundary }) => {
@@ -39,24 +39,6 @@ function ErrFallBack() {
   const navigate = useNavigate();
   return (
     <div className="error-boundary">
-      <nav>
-        <NavLink to={"/"}>Home</NavLink>
-        <NavLink to={"/pages/404"}>See 404 Page</NavLink>
-        <NavLink
-          style={({ isActive }) =>
-            isActive
-              ? {
-                  backgroundColor: "#000",
-                  color: "#fff",
-                  textDecoration: "none",
-                }
-              : { backgroundColor: "#fff", color: "#000" }
-          }
-          to={"/pages/errorBoundary"}
-        >
-          Test Error Boundary
-        </NavLink>
-      </nav>
       <ErrorBoundary
         FallbackComponent={ErrorFallback}
         onReset={() => navigate("/")}

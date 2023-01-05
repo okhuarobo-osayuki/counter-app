@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import '../assets/css/404.css';
 
 function NotFoundPage() {
@@ -11,25 +11,6 @@ function NotFoundPage() {
       <link rel="canonical" href="/pages/404" />
     </Helmet>
     <section className="four-0-four">
-      <nav>
-        <NavLink to={"/"}>Home</NavLink>
-        <NavLink
-          style={({ isActive }) =>
-            isActive
-              ? {
-                  backgroundColor: "#000",
-                  color: "#fff",
-                  textDecoration: "none",
-                }
-              : { backgroundColor: "#fff", color: "#000" }
-          }
-          to={"/pages/404"}
-        >
-          See 404 Page
-        </NavLink>
-        <NavLink to={"/pages/errorBoundary"}>Test Error Boundary</NavLink>
-      </nav>
-
         <div className="four-0-four-img">
           <img
             src="https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif"
