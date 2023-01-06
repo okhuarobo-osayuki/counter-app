@@ -4,13 +4,16 @@ import RouteApp from "./routes/routes";
 import Loading from "./components/loading";
 import { useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
+import { AuthProvider } from "./context/authContext";
 
 const ErrorFallback = ({ error, resetErrorBoundary }) => {
   return (
     <div role="alert" className="errFallBack">
       <div className="container">
-        <h1 className="errFallBack_para" style={{ color: "red" }}>OOPs! Something went wrong</h1>
-        <pre >{error.message}</pre>
+        <h1 className="errFallBack_para" style={{ color: "red" }}>
+          OOPs! Something went wrong
+        </h1>
+        <pre>{error.message}</pre>
         <button onClick={resetErrorBoundary}>Reset</button>
       </div>
     </div>
@@ -29,9 +32,11 @@ function App() {
       {loading ? (
         <Loading />
       ) : (
-        <ErrorBoundary FallbackComponent={ErrorFallback}>
-          <RouteApp />
-        </ErrorBoundary>
+        <AuthProvider>
+          <ErrorBoundary FallbackComponent={ErrorFallback}>
+            <RouteApp />
+          </ErrorBoundary>
+        </AuthProvider>
       )}
     </>
   );
