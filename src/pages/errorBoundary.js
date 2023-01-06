@@ -7,18 +7,15 @@ import "../assets/css/errorBoundary.css";
 const ErrorFallback = ({ error, resetErrorBoundary }) => {
   return (
     <>
-    <Helmet>
-      <title>Error Boundary</title>
-      <meta name="description" content="A page for testing react error boundary for any error occurring in react" />
-      <link rel="canonical" href="/pages/errorBoundary" />
-    </Helmet>
-    <div role="alert" className="errFallBack">
-      <div className="container">
-        <h1 className="errFallBack_para" style={{ color: "red" }}>OOPs! Something went wrong</h1>
-        <pre >{error.message}</pre>
-        <button onClick={resetErrorBoundary}>Reset</button>
+      <div role="alert" className="errFallBack">
+        <div className="container">
+          <h1 className="errFallBack_para" style={{ color: "red" }}>
+            OOPs! Something went wrong
+          </h1>
+          <pre>{error.message}</pre>
+          <button onClick={resetErrorBoundary}>Reset</button>
+        </div>
       </div>
-    </div>
     </>
   );
 };
@@ -36,6 +33,14 @@ const User = ({ heroName }) => {
 };
 
 function ErrFallBack() {
+  <Helmet>
+    <title>Error Boundary</title>
+    <meta
+      name="description"
+      content="A page for testing react error boundary for any error occurring in react"
+    />
+    <link rel="canonical" href="/pages/errorBoundary" />
+  </Helmet>;
   const navigate = useNavigate();
   return (
     <div className="error-boundary">
