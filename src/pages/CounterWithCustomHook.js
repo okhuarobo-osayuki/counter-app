@@ -7,7 +7,7 @@ function CounterWithCustomHook() {
 
   return (
     <main className="content">
-      <p className="counter-value">your count is: {count}</p>
+      <p className="counter-value">custom hook count is: <span>{count}</span></p>
       <div className="set-value-input">
         <input
           ref={inputRef}
