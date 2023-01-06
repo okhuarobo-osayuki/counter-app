@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+
+.signup-container,
+.heading,
+.signup-form, .s-u-socials {
+  display: flex;
+}
+
+.signup-container,
+.signup-form {
+  flex-direction: column;
+}
+
+.signup-container {
+  justify-content: space-around;
+  align-items: center;
+  flex: 1 1 auto;
+  padding-bottom: 1.5rem;
+}
+
+.heading,
+.heading h2,
+.s-up-img,
+.signup-form,
+.log-in-link a {
+  position: relative;
+}
+
+.heading {
+  align-items: center;
+  flex-wrap: wrap;
+  top: 3.6rem;
+}
+
+.heading h2,
+.signup-form label,
+.s-u-email,
+.s-u-create-pwd,
+.s-u-confirm-pwd,
+.log-in-link a,
+.signup-link a {
+  font-weight: 700;
+}
+
+
+.heading h2 {
+  font-size: 24px;
+  font-style: normal;
+  right: 2.5rem;
+  font-family: var(--primary-font);
+  color: #282973;
+}
+
+.s-up-img {
+  left: 3.13rem;
+}
+
+.signup-form {
+  top: 0.9rem;
+}
+
+.signup-form label {
+  margin-top: 1.4rem;
+  font-style: normal;
+  font-size: 1.1rem;
+}
+
+.s-u-input-wrapper {
+  border: 1px solid grey;
+  width: 22rem;
+  height: 2.6rem;
+}
+
+.s-u-input-wrapper:focus-within {
+    border: 1px solid #000;
+}
+
+.s-u-email,
+.s-u-create-pwd,
+.s-u-confirm-pwd {
+  outline: none;
+  border: none;
+  width: 21.8rem;
+  height: 2.44rem;
+  letter-spacing: normal;
+  word-spacing: normal;
+  font-size: 1.1rem;
+  position: relative;
+  margin-left: .1rem;
+}
+
+.s-u-btn {
+  margin-top: 2.8rem;
+  height: 2.6rem;
+  width: 8.1rem;
+  border-radius: 10px;
+  background-color: #000;
+  color: #fff;
+  font-style: normal;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.s-u-btn:hover {
+  background-color: #fff;
+  color: #000;
+  border: .5px solid #000;
+  font-weight: 700;
+}
+
+
+.log-in-link a {
+  text-align: center;
+  left: 3.3rem;
+  top: -1.1rem;
+  color: #326cfb;
+  font-style: normal;
+  font-size: 1.1rem;
+}
+
+.log-in-link a:hover {
+  text-decoration: underline;
+}
+
+.s-u-socials {
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-left: 2.5rem;
+}
+
+.s-u-socials h3 {
+  color: #000000;
+  line-height: 1.5rem;
+  width: 15rem;
+}
+
+.social-media-icons {
+  margin-top: 0.5rem;
+  margin-left: -5.5rem;
+}
+
+
+.social-media-icons a svg {
+  width: 2.6rem;
+  height: 2.6rem;
+}
+
+.frgt-password a{
+    left: 5.3rem !important;
+}
+
+.signup-link{
+    margin-top: 1.5rem;
+}
+
+.signup-link a{
+    color: #326cfb;
+    font-style: normal;
+}
+
+.signup-link a:hover{
+    text-decoration: underline;
+}
