@@ -1,5 +1,11 @@
 import { useContext, useState } from "react";
-import { Link, NavLink, useMatch, useNavigate, useResolvedPath, } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  useMatch,
+  useNavigate,
+  useResolvedPath,
+} from "react-router-dom";
 import "../assets/css/navbar.css";
 import { AuthContext } from "../context/authContext";
 
@@ -47,15 +53,25 @@ function NavBar() {
             <NavBarLink to="/pages/errorBoundary">Error Boundary</NavBarLink>
           </ul>
           <div className="user-space">
-            <p className="user">
-              Hi <span>{currentUser.email}</span>!
-            </p>
+            {currentUser.displayName ? (
+              <p className="user">
+                Hi <span>{currentUser.displayName}</span>
+              </p>
+            ) : (
+              <p className="user">
+                Hi <span>{currentUser.email}</span>
+              </p>
+            )}
             <button className="logout" onClick={handleLogout}>
               Log out
             </button>
           </div>
         </>
-      ) : <p className="log-in-msg">Hello! Please Log in to play the counter game</p>}
+      ) : (
+        <p className="log-in-msg">
+          Hello! Please Log in to play the counter game
+        </p>
+      )}
       {error && <p className="error">{error}</p>}
     </nav>
   );
