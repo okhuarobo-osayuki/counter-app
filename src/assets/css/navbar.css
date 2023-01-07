@@ -132,6 +132,14 @@ nav div{
   background-color: #f11c1c;
 }
 
+.log-in-msg{
+  background-color: #FFEB3B;
+  padding: 15px 25px;
+  text-align: center;
+  border-radius: 10px;
+  
+}
+
 .error{
   background-color: #FFDDDD;
   position: relative;
