@@ -99,6 +99,13 @@ nav div{
   }
 }
 
+.user-space{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .user{
   background-color: #1c87c9;
   border-radius: 10px;
@@ -110,8 +117,8 @@ nav div{
   animation: glowing 1500ms infinite, slideInLeft 1.5s ease-in-out;
 }
 
-.user span{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.user{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .logout{
