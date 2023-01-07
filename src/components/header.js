@@ -1,5 +1,11 @@
 import { useContext, useState } from "react";
-import { Link, NavLink, useMatch, useNavigate, useResolvedPath } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  useMatch,
+  useNavigate,
+  useResolvedPath,
+} from "react-router-dom";
 import "../assets/css/navbar.css";
 import { AuthContext } from "../context/authContext";
 
@@ -44,14 +50,16 @@ function NavBar() {
         <NavBarLink to="/pages/404">404 Page</NavBarLink>
         <NavBarLink to="/pages/errorBoundary">Error Boundary</NavBarLink>
       </ul>
-      <div>
-        <p className="user">
-          Hi <span>{currentUser.email}</span>!
-        </p>
-        <button className="logout" onClick={handleLogout}>
-          Log out
-        </button>
-      </div>
+      {currentUser ? (
+        <div>
+          <p className="user">
+            Hi <span>{currentUser.email}</span>!
+          </p>
+          <button className="logout" onClick={handleLogout}>
+            Log out
+          </button>
+        </div>
+      ) : null}
       {error && <p className="error">{error}</p>}
     </nav>
   );
