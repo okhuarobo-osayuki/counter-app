@@ -46,7 +46,7 @@ function NavBar() {
             <NavBarLink to="/pages/404">404 Page</NavBarLink>
             <NavBarLink to="/pages/errorBoundary">Error Boundary</NavBarLink>
           </ul>
-          <div>
+          <div className="user-space">
             <p className="user">
               Hi <span>{currentUser.email}</span>!
             </p>
