@@ -3,10 +3,21 @@ import { ErrorBoundary } from "react-error-boundary";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import "../assets/css/errorBoundary.css";
+import NavBar from "../components/header";
 
 const ErrorFallback = ({ error, resetErrorBoundary }) => {
   return (
     <>
+      <Helmet>
+        <title>Error Boundary</title>
+        <meta
+          name="description"
+          content="A page for testing react error boundary for any error occurring in react"
+        />
+        <link rel="canonical" href="/pages/errorBoundary" />
+      </Helmet>
+
+      <NavBar />
       <div role="alert" className="errFallBack">
         <div className="container">
           <h1 className="errFallBack_para" style={{ color: "red" }}>
@@ -33,14 +44,6 @@ const User = ({ heroName }) => {
 };
 
 function ErrFallBack() {
-  <Helmet>
-    <title>Error Boundary</title>
-    <meta
-      name="description"
-      content="A page for testing react error boundary for any error occurring in react"
-    />
-    <link rel="canonical" href="/pages/errorBoundary" />
-  </Helmet>;
   const navigate = useNavigate();
   return (
     <div className="error-boundary">

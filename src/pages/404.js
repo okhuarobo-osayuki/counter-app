@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import '../assets/css/404.css';
+import NavBar from "../components/header";
 
 function NotFoundPage() {
   return (
@@ -10,6 +11,7 @@ function NotFoundPage() {
       <meta name="description" content="404 page for catching any routing error occurring in react caused by the user" />
       <link rel="canonical" href="/pages/404" />
     </Helmet>
+    <NavBar />
     <section className="four-0-four">
         <div className="four-0-four-img">
           <img

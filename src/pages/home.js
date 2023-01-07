@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import { Outlet } from "react-router-dom";
 import "../assets/css/style.css";
-import { NavBarLink } from "../components/header";
+import NavBar, { NavBarLink } from "../components/header";
 import Loading from "../components/loading";
 
 const CounterWithReducer = lazy(() => import("./CounterWithReducer"));
@@ -20,6 +20,7 @@ function Home() {
         <link rel="canonical" href="/home" />
       </Helmet>
       <Suspense fallback={<Loading />}>
+        <NavBar />
         <section className="child-nav">
           <NavBarLink
             to={"/pages/CounterWithReducer"}
