@@ -1,7 +1,38 @@
-import { Link } from "react-router-dom";
+import { useContext, useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../assets/css/signup.css";
+import { AuthContext } from "../context/authContext";
+import {auth} from "../assets/config/firebase";
 
 function Signup() {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const passwordConfirmRef = useRef();
+  const { signup } = useContext(AuthContext)
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  //handle submission of form
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+      return setError('Password do not match');
+    }
+
+    try {
+      setError('');
+      setLoading(true);
+      await signup(auth, emailRef.current.value, passwordRef.current.value);
+      navigate('/pages/login');
+    } catch {
+      setError('Failed to create an account');
+    }
+
+    setLoading(false)
+  }
+
   return (
     <section className="signup-container">
       <div className="heading">
@@ -14,7 +45,7 @@ function Signup() {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_2_152)">
+          <g clipPath="url(#clip0_2_152)">
             <path
               d="M134.154 118.72L134.151 118.791L137.696 156H111.827L108.474 133.147L106.998 155.414L80.4324 155.121L83.2542 125.887L85.654 112.336V112.333L86.0141 110.294H133.449L133.511 111.033L134.154 118.72Z"
               fill="#2F2E41"
@@ -113,7 +144,7 @@ function Signup() {
         </svg>
       </div>
 
-      <form className="signup-form">
+      <form className="signup-form" onSubmit={handleSubmit}>
         <label htmlFor="signUpEmail">Email</label>
         <div className="s-u-input-wrapper">
           <input
@@ -122,6 +153,8 @@ function Signup() {
             id="signUpEmail"
             className="s-u-email"
             title="Must be a correct email address like: example@gmail.com"
+            ref={emailRef}
+            required
           />
         </div>
 
@@ -132,8 +165,8 @@ function Signup() {
             name="create-password"
             id="signUpCreatePwd"
             className="s-u-create-pwd"
-            minlength="4"
-            title="min. of 4 characters"
+            ref={passwordRef}
+            required
           />
         </div>
 
@@ -144,12 +177,12 @@ function Signup() {
             name="confirm-password"
             id="signUpConfirmPwd"
             className="s-u-confirm-pwd"
-            minlength="8"
-            title="min. of 8 characters"
+            ref={passwordConfirmRef}
+            required
           />
         </div>
-
-        <button type="submit" className="s-u-btn">
+        {error && <p className="error">{error}</p>}
+        <button disabled={loading} style={loading ? {cursor: "wait",} : {cursor: "pointer"}} type="submit" className="s-u-btn">
           Sign Up
         </button>
       </form>

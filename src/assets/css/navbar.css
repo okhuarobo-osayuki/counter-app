@@ -86,15 +86,15 @@ nav div{
 
 @keyframes glowing {
   0% {
-    background-color: #2ba805;
-    box-shadow: 0 0 3px #2ba805;
+    background-color: #1c87c9;
+    box-shadow: 0 0 3px #1c87c9;
   }
   50% {
-    background-color: #49e819;
-    box-shadow: 0 0 10px #49e819;
+    background-color: #1995e8;
+    box-shadow: 0 0 10px #1995e8;
   }
   100% {
-    background-color: #2ba805;
+    background-color: #3105a8;
     box-shadow: 0 0 3px #2ba805;
   }
 }
@@ -107,7 +107,11 @@ nav div{
   font-size: 20px;
   padding: 10px 15px;
   text-align: center;
-  animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite, slideInLeft 1.5s ease-in-out;
+}
+
+.user span{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .logout{
@@ -119,6 +123,9 @@ nav div{
   cursor: pointer;
   margin-left: 1rem;
   font-weight: 600;
+  animation: slideInLeft;
+  animation-duration: 1.5s;
+  animation-fill-mode: both;
 }
 
 .logout:hover{

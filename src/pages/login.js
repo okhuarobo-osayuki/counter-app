@@ -1,9 +1,36 @@
-import { Link } from "react-router-dom";
+import { useContext, useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../assets/css/signup.css";
+import { AuthContext } from "../context/authContext";
+import {auth} from "../assets/config/firebase";
 
-function Login() {
+function Signup() {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const { login } = useContext(AuthContext)
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  //handle submission of form
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+
+    try {
+      setError('');
+      setLoading(true);
+      await login(auth, emailRef.current.value, passwordRef.current.value);
+      navigate('/');
+    } catch {
+      setError('Failed to log in');
+    }
+
+    setLoading(false)
+  }
+
   return (
-    <div className="signup-container">
+    <section className="signup-container">
       <div className="heading">
         <h2>Log In</h2>
         <svg
@@ -14,7 +41,7 @@ function Login() {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_2_152)">
+          <g clipPath="url(#clip0_2_152)">
             <path
               d="M134.154 118.72L134.151 118.791L137.696 156H111.827L108.474 133.147L106.998 155.414L80.4324 155.121L83.2542 125.887L85.654 112.336V112.333L86.0141 110.294H133.449L133.511 111.033L134.154 118.72Z"
               fill="#2F2E41"
@@ -113,7 +140,7 @@ function Login() {
         </svg>
       </div>
 
-      <form className="signup-form">
+      <form className="signup-form" onSubmit={handleSubmit}>
         <label htmlFor="signUpEmail">Email</label>
         <div className="s-u-input-wrapper">
           <input
@@ -122,6 +149,8 @@ function Login() {
             id="signUpEmail"
             className="s-u-email"
             title="Must be a correct email address like: example@gmail.com"
+            ref={emailRef}
+            required
           />
         </div>
 
@@ -132,22 +161,22 @@ function Login() {
             name="create-password"
             id="signUpCreatePwd"
             className="s-u-create-pwd"
-            minlength="4"
-            title="min. of 4 characters"
+            ref={passwordRef}
+            required
           />
         </div>
-
-        <button type="submit" className="s-u-btn">
+        {error && <p className="error">{error}</p>}
+        <button disabled={loading} style={loading ? {cursor: "wait",} : {cursor: "pointer"}} type="submit" className="s-u-btn">
           Log In
         </button>
       </form>
 
-      <aside className="log-in-link frgt-password">
-        <Link to={"/pages/signup"}>Forgot Password?</Link>
+      <aside className="log-in-link">
+        <Link to={"/pages/signup"}>Sign Up</Link>
       </aside>
 
       <div className="s-u-socials">
-        <h3>or log in with:</h3>
+        <h3>or sign up with:</h3>
 
         <div className="social-media-icons">
           <Link>
@@ -180,13 +209,8 @@ function Login() {
           </Link>
         </div>
       </div>
-
-      <div className="signup-link">
-        <p>Don't have an account? <Link>Sign Up</Link></p>
-      </div>
-
-    </div>
+    </section>
   );
 }
 
-export default Login;
+export default Signup;
