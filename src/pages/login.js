@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../assets/css/signup.css";
 import { AuthContext } from "../context/authContext";
 import {auth} from "../assets/config/firebase";
+import NavBar from "../components/header";
 
 function Signup() {
   const emailRef = useRef();
@@ -30,6 +31,8 @@ function Signup() {
   }
 
   return (
+    <>
+    <NavBar />
     <section className="signup-container">
       <div className="heading">
         <h2>Log In</h2>
@@ -210,6 +213,7 @@ function Signup() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 
