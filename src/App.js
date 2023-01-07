@@ -5,15 +5,14 @@ import Loading from "./components/loading";
 import { useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { AuthProvider } from "./context/authContext";
+import { useNavigate } from "react-router-dom";
 
 const ErrorFallback = ({ error, resetErrorBoundary }) => {
   return (
     <div role="alert" className="errFallBack">
       <div className="container">
-        <h1 className="errFallBack_para" style={{ color: "red" }}>
-          OOPs! Something went wrong
-        </h1>
-        <pre>{error.message}</pre>
+        <h1 className="errFallBack_para" style={{ color: "red" }}>OOPs! Something went wrong</h1>
+        <pre >{error.message}</pre>
         <button onClick={resetErrorBoundary}>Reset</button>
       </div>
     </div>
@@ -22,6 +21,7 @@ const ErrorFallback = ({ error, resetErrorBoundary }) => {
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate()
 
   setTimeout(() => {
     setLoading(false);
@@ -29,15 +29,15 @@ function App() {
 
   return (
     <>
+    <AuthProvider>
       {loading ? (
         <Loading />
       ) : (
-        <AuthProvider>
-          <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <RouteApp />
-          </ErrorBoundary>
-        </AuthProvider>
+        <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => {navigate("/")}}>
+          <RouteApp />
+        </ErrorBoundary>
       )}
+      </AuthProvider>
     </>
   );
 }
