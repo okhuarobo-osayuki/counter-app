@@ -10,7 +10,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   gap: 2rem;
   position: relative;
 }
@@ -76,6 +76,62 @@ nav ul a:hover {
   animation-duration: 1.5s;
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
+}
+
+nav div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes glowing {
+  0% {
+    background-color: #2ba805;
+    box-shadow: 0 0 3px #2ba805;
+  }
+  50% {
+    background-color: #49e819;
+    box-shadow: 0 0 10px #49e819;
+  }
+  100% {
+    background-color: #2ba805;
+    box-shadow: 0 0 3px #2ba805;
+  }
+}
+
+.user{
+  background-color: #1c87c9;
+  border-radius: 10px;
+  border: none;
+  color: #eeeeee;
+  font-size: 20px;
+  padding: 10px 15px;
+  text-align: center;
+  animation: glowing 1500ms infinite;
+}
+
+.logout{
+  background-color: #ee5757;
+  color: #fff;
+  border: 0.5px solid #000;
+  padding: 20px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 1rem;
+  font-weight: 600;
+}
+
+.logout:hover{
+  background-color: #f11c1c;
+}
+
+.error{
+  background-color: #FFDDDD;
+  position: relative;
+  top: 1.5rem;
+  padding: 1rem 1rem;
+  border-radius: 5px;
+  text-align: center;
 }
 
 @media screen and (max-width: 523px) {
