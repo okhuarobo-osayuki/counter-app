@@ -1,11 +1,5 @@
-import { useContext, useState } from "react";
-import {
-  Link,
-  NavLink,
-  useMatch,
-  useNavigate,
-  useResolvedPath,
-} from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, NavLink, useMatch, useNavigate, useResolvedPath, } from "react-router-dom";
 import "../assets/css/navbar.css";
 import { AuthContext } from "../context/authContext";
 
@@ -54,9 +48,12 @@ function NavBar() {
           </ul>
           <div className="user-space">
             {currentUser.displayName ? (
-              <p className="user">
-                Hi <span>{currentUser.displayName}</span>
-              </p>
+              <>
+              <img src={currentUser.photoURL} alt="user" className="user-img" />
+                <p className="user">
+                  Hi <span>{currentUser.displayName}</span>
+                </p>
+              </>
             ) : (
               <p className="user">
                 Hi <span>{currentUser.email}</span>
