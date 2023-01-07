@@ -39,21 +39,23 @@ function NavBar() {
       <Link to="/" className="logo">
         Counter App
       </Link>
-      <ul>
-        <NavBarLink to="/">Home</NavBarLink>
-        <NavBarLink to="/pages/404">404 Page</NavBarLink>
-        <NavBarLink to="/pages/errorBoundary">Error Boundary</NavBarLink>
-      </ul>
       {currentUser ? (
-        <div>
-          <p className="user">
-            Hi <span>{currentUser.email}</span>!
-          </p>
-          <button className="logout" onClick={handleLogout}>
-            Log out
-          </button>
-        </div>
-      ) : null}
+        <>
+          <ul>
+            <NavBarLink to="/">Home</NavBarLink>
+            <NavBarLink to="/pages/404">404 Page</NavBarLink>
+            <NavBarLink to="/pages/errorBoundary">Error Boundary</NavBarLink>
+          </ul>
+          <div>
+            <p className="user">
+              Hi <span>{currentUser.email}</span>!
+            </p>
+            <button className="logout" onClick={handleLogout}>
+              Log out
+            </button>
+          </div>
+        </>
+      ) : <p className="log-in-msg">Hello! Please Log in to play the counter game</p>}
       {error && <p className="error">{error}</p>}
     </nav>
   );
