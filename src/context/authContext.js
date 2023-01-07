@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithRedirect, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../assets/config/firebase";
 
@@ -25,6 +25,11 @@ export function AuthProvider({ children }) {
         return signOut(auth)
     }
 
+    //set google sign in context provider
+    function googleSignIn(auth, googleProvider) {
+        return signInWithRedirect(auth, googleProvider)
+    }
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth,   ( user) => {
             setCurrentUser(user)
@@ -37,6 +42,7 @@ export function AuthProvider({ children }) {
     const value = {
         currentUser,
         signup,
+        googleSignIn,
         login,
         logout,
     }
