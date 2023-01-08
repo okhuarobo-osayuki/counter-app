@@ -30,6 +30,7 @@ export function AuthProvider({ children }) {
         return signInWithRedirect(auth, googleProvider)
     }
 
+    //An observer to check if authentication state has changed, returns an unsubscribe function which allows us to stop listening for events whenever the hook is no longer in use
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth,   ( user) => {
             setCurrentUser(user)
@@ -39,6 +40,7 @@ export function AuthProvider({ children }) {
         return unsubscribe
     }, [])
 
+    //value to be passed to the context provider
     const value = {
         currentUser,
         signup,
