@@ -49,7 +49,12 @@ function NavBar() {
           <div className="user-space">
             {currentUser.displayName ? (
               <>
-              <img src={currentUser.photoURL} alt="user" className="user-img" referrerPolicy="no-referrer" />
+                <img
+                  src={currentUser.photoURL}
+                  alt="user"
+                  className="user-img"
+                  referrerPolicy="no-referrer"
+                />
                 <p className="user">
                   Hi <span>{currentUser.displayName}</span>
                 </p>
