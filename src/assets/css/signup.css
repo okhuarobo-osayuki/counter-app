@@ -119,6 +119,17 @@
   font-weight: 700;
 }
 
+.loading-btn{
+  margin-top: 2.8rem;
+  height: 2.6rem;
+  width: 8.1rem;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000;
+  border: .5px solid #000;
+  font-style: normal;
+  font-size: 1rem;
+}
 
 .log-in-link a {
   text-align: center;
