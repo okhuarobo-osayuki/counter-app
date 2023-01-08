@@ -1,9 +1,9 @@
 import { useContext, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../assets/css/signup.css";
+import "../assets/css/navbar.css";
 import { AuthContext } from "../context/authContext";
 import { auth, googleProvider } from "../assets/config/firebase";
-import NavBar from "../components/header";
 
 function Signup() {
   const emailRef = useRef();
@@ -14,6 +14,7 @@ function Signup() {
   const navigate = useNavigate();
 
   //handle submission of form
+  //an asynchroneous function that handles the submission of the form and logs in the user, then redirects to the home page; if there is an error, it displays the error message;
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -31,13 +32,26 @@ function Signup() {
 
   function googleSubmit(e) {
     e.preventDefault();
-    googleSignIn(auth, googleProvider);
-    navigate("/");
+    try {
+      setError("");
+      setLoading(true);
+      googleSignIn(auth, googleProvider);
+      navigate("/");
+    } catch {
+      setError("Failed to sign in with Google");
+    }
   }
 
   return (
     <>
-      <NavBar />
+      <nav>
+        <div className="logo">
+          Counter App
+        </div>
+        <p className="log-in-msg">
+          Hello! Please Log in to play the counter game
+        </p>
+      </nav>
       <section className="signup-container">
         <div className="heading">
           <h2>Log In</h2>
@@ -174,14 +188,15 @@ function Signup() {
             />
           </div>
           {error && <p className="error">{error}</p>}
-          <button
-            disabled={loading}
-            style={loading ? { cursor: "wait" } : { cursor: "pointer" }}
-            type="submit"
-            className="s-u-btn"
-          >
-            Log In
-          </button>
+          {loading ? (
+            <button disabled={loading} className="loading-btn">
+              Loading....
+            </button>
+          ) : (
+            <button type="submit" className="s-u-btn">
+              Log In
+            </button>
+          )}
         </form>
 
         <aside className="log-in-link">
