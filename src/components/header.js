@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink, useMatch, useNavigate, useResolvedPath, } from "react-router-dom";
 import "../assets/css/navbar.css";
 import { AuthContext } from "../context/authContext";
@@ -49,7 +49,7 @@ function NavBar() {
           <div className="user-space">
             {currentUser.displayName ? (
               <>
-              <img src={currentUser.photoURL} alt="user" className="user-img" />
+              <img src={currentUser.photoURL} alt="user" className="user-img" referrerPolicy="no-referrer" />
                 <p className="user">
                   Hi <span>{currentUser.displayName}</span>
                 </p>
