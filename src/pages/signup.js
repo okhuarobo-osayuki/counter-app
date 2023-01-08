@@ -36,8 +36,15 @@ function Signup() {
 
   function googleSubmit(e) {
     e.preventDefault();
-    googleSignIn(auth, googleProvider);
-    navigate("/");
+
+    try {
+      setError("");
+      setLoading(true);
+      googleSignIn(auth, googleProvider);
+      navigate("/");
+    } catch {
+      setError("Failed to sign in with Google");
+    }
   }
 
   return (
@@ -191,14 +198,15 @@ function Signup() {
             />
           </div>
           {error && <p className="error">{error}</p>}
-          <button
-            disabled={loading}
-            style={loading ? { cursor: "wait" } : { cursor: "pointer" }}
-            type="submit"
-            className="s-u-btn"
-          >
-            Sign Up
-          </button>
+          {loading ? (
+            <button disabled={loading} className="s-u-btn">
+              Loading....
+            </button>
+          ) : (
+            <button type="submit" className="s-u-btn">
+              Sign Up
+            </button>
+          )}
         </form>
 
         <aside className="log-in-link">
