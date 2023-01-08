@@ -40,6 +40,7 @@ nav {
   text-decoration: none !important;
   font-family: "Pacifico", cursive;
   color: #000;
+  cursor: pointer;
   animation-name: slideInLeft;
   animation-duration: 1.5s;
   animation-fill-mode: both;
