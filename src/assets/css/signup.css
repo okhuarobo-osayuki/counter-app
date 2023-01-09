@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
+.log-in-msg {
+  background-color: #ffeb3b;
+  padding: 15px 25px;
+  text-align: center;
+  border-radius: 10px;
+}
 
 .signup-container,
 .heading,
@@ -89,6 +95,12 @@
   font-weight: 400;
   position: relative;
   margin-left: .1rem;
+}
+
+.warning{
+  font-size: .8rem;
+  color: red;
+  position: relative;
 }
 
 .error{
@@ -184,4 +196,16 @@
 
 .signup-link a:hover{
     text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .log-in-msg{
+    padding: 9px 10px;
+  }
 }
