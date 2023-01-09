@@ -231,6 +231,33 @@ nav div {
     opacity 0.2s linear;
 }
 
+.close-menu-btn {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+  padding: 15px 15px;
+}
+
+.close-menu-btn:before,
+.close-menu-btn:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background-color: #000;
+}
+
+.close-menu-btn:before {
+  transform: rotate(45deg);
+}
+
+.close-menu-btn:after {
+  transform: rotate(-45deg);
+}
+
 @media screen and (max-width: 768px) {
   nav {
     height: 8rem;
@@ -248,6 +275,16 @@ nav div {
     justify-content: space-around;
   }
 
+  @keyframes slideInDown {
+    0% {
+      transform: translateY(-100%);
+      visibility: visible;
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
   .mobile-menu {
     display: flex;
     flex-direction: column;
@@ -263,6 +300,7 @@ nav div {
     padding: 12rem 0;
     border-bottom: 1px solid #000;
     border-top: 1px solid #000;
+    
   }
 
   .mobile-menu-btn {
@@ -286,7 +324,7 @@ nav div {
     border-bottom: 0.5px solid #000;
     padding: 15px 100px;
     text-align: center;
-    animation-name: slideInLeft;
+    animation-name: slideInDown;
     animation-duration: 1.5s;
     animation-fill-mode: both;
     animation-timing-function: ease-in-out;
