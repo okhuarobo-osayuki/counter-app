@@ -13,6 +13,7 @@ nav {
   justify-content: space-evenly;
   gap: 2rem;
   position: relative;
+  background-color: #fff;
 }
 
 @keyframes slideInLeft {
@@ -148,13 +149,6 @@ nav div {
 
 .logout:hover {
   background-color: #f11c1c;
-}
-
-.log-in-msg {
-  background-color: #ffeb3b;
-  padding: 15px 25px;
-  text-align: center;
-  border-radius: 10px;
 }
 
 .error {
