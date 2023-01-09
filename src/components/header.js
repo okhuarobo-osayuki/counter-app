@@ -20,6 +20,7 @@ export function NavBarLink({ to, children, className, ...props }) {
 
 function NavBar() {
   const [error, setError] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { currentUser, logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -34,6 +35,10 @@ function NavBar() {
     }
   }
 
+  function toggleMenu() {
+    setIsMenuOpen((prev) => !prev);
+  }
+
   return (
     <nav>
       <Link to="/" className="logo">
@@ -41,7 +46,7 @@ function NavBar() {
       </Link>
       {currentUser ? (
         <>
-          <ul>
+          <ul className="nav-list">
             <NavBarLink to="/">Home</NavBarLink>
             <NavBarLink to="/pages/404">404 Page</NavBarLink>
             <NavBarLink to="/pages/errorBoundary">Error Boundary</NavBarLink>
@@ -67,6 +72,48 @@ function NavBar() {
             <button className="logout" onClick={handleLogout}>
               Log out
             </button>
+          </div>
+
+          <div className="mobile-display">
+            <div>
+              {currentUser.displayName ? (
+                <img src={currentUser.photoURL} alt="user" className="user-img" referrerPolicy="no-referrer" />
+              ) : ""}
+            </div>
+            <button onClick={toggleMenu} className="mobile-menu-btn" >
+              <div className={`hamburger hamburger--collapse ${
+              isMenuOpen ? 'is-active' : ''
+            }`}>
+                <div className="hamburger-box">
+                  <div className="hamburger-inner"></div>
+                </div>
+              </div>
+            </button>
+            {isMenuOpen && (
+              <div className="mobile-menu">
+              <ul className="mobile-nav-list">
+                <Link to="/">Home</Link>
+                <Link to="/pages/404">404 Page</Link>
+                <Link to="/pages/errorBoundary">Error Boundary</Link>
+              </ul>
+              <div className="mobile-user-space">
+                {currentUser.displayName ? (
+                  <>
+                    <p className="user">
+                      Hi <span>{currentUser.displayName}</span>
+                    </p>
+                  </>
+                ) : (
+                  <p className="user">
+                    Hi <span>{currentUser.email}</span>
+                  </p>
+                )}
+                  <button className="logout" onClick={handleLogout}>
+                    Log out
+                  </button>
+              </div>
+              </div>
+            )}
           </div>
         </>
       ) : (
