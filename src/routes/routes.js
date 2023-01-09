@@ -4,8 +4,8 @@ import Loading from "../components/loading";
 import Signup from "../pages/signup";
 import Login from "../pages/login";
 import { AuthContext } from "../context/authContext";
-import Home from "../pages/home";
 
+const Home = lazy(() => import("../pages/home"));
 const NotFoundPage = lazy(() => import("../pages/404"));
 const ErrFallBack = lazy(() => import("../pages/errorBoundary"));
 const CounterWithReducer = lazy(() => import("../pages/CounterWithReducer"));
