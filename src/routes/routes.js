@@ -4,14 +4,12 @@ import Loading from "../components/loading";
 import Signup from "../pages/signup";
 import Login from "../pages/login";
 import { AuthContext } from "../context/authContext";
+import CounterWithReducer from "../pages/CounterWithReducer";
+import CounterWithCustomHook from "../pages/CounterWithCustomHook";
 
 const Home = lazy(() => import("../pages/home"));
 const NotFoundPage = lazy(() => import("../pages/404"));
 const ErrFallBack = lazy(() => import("../pages/errorBoundary"));
-const CounterWithReducer = lazy(() => import("../pages/CounterWithReducer"));
-const CounterWithCustomHook = lazy(() =>
-  import("../pages/CounterWithCustomHook")
-);
 
 function RouteApp() {
   const { currentUser } = useContext(AuthContext);
