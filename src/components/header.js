@@ -81,9 +81,7 @@ function NavBar() {
               ) : ""}
             </div>
             <button onClick={toggleMenu} className="mobile-menu-btn" >
-              <div className={`hamburger hamburger--collapse ${
-              isMenuOpen ? 'is-active' : ''
-            }`}>
+              <div className="hamburger hamburger--collapse">
                 <div className="hamburger-box">
                   <div className="hamburger-inner"></div>
                 </div>
