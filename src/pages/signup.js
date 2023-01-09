@@ -1,6 +1,7 @@
 import { useContext, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../assets/css/signup.css";
+import "../assets/css/navbar.css";
 import { AuthContext } from "../context/authContext";
 import { auth, googleProvider } from "../assets/config/firebase";
 import { sendEmailVerification } from "firebase/auth";
@@ -36,6 +37,7 @@ function Signup() {
     setLoading(false);
   }
 
+  //google submit function that signs in the user through google authentication, and redirects the user to the home page.
   function googleSubmit(e) {
     e.preventDefault();
 
@@ -194,7 +196,7 @@ function Signup() {
               required
             />
           </div>
-
+          <p className="warning">*Password must be at least 6 characters</p>
           <label htmlFor="signUpConfirmPwd">Confirm Password</label>
           <div className="s-u-input-wrapper">
             <input
