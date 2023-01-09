@@ -23,7 +23,7 @@ function NotFoundPage() {
 
             <p>the page you are looking for is not available!</p>
 
-            <Link to={"/"}>Go to Home</Link>
+            <Link to={"/"}>Go to Home Page</Link>
           </div>
         </div>
     </section>
