@@ -54,7 +54,7 @@ nav {
   gap: 1rem;
 }
 
-.nav-list a {
+nav > ul a {
   background-color: #fff;
   color: #000;
   border: 0.5px solid #000;
