@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, NavLink, useMatch, useNavigate, useResolvedPath, } from "react-router-dom";
+import { Link, NavLink, useMatch, useNavigate, useResolvedPath } from "react-router-dom";
 import "../assets/css/navbar.css";
 import { AuthContext } from "../context/authContext";
 
@@ -21,6 +21,13 @@ export function NavBarLink({ to, children, className, ...props }) {
 function NavBar() {
   const [error, setError] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mobileMenuIcon, setMobileMenuIcon] = useState(
+    <div className="hamburger hamburger--collapse">
+      <div className="hamburger-box">
+        <div className="hamburger-inner"></div>
+      </div>
+    </div>
+  );
   const { currentUser, logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -36,7 +43,23 @@ function NavBar() {
   }
 
   function toggleMenu() {
-    setIsMenuOpen((prev) => !prev);
+    // setIsMenuOpen((prev) => !prev);
+    if (!isMenuOpen) {
+      setMobileMenuIcon(
+        <div className="close-menu-btn">
+        </div>
+      );
+      setIsMenuOpen(true);
+    } else {
+      setMobileMenuIcon(
+        <div className="hamburger hamburger--collapse">
+          <div className="hamburger-box">
+            <div className="hamburger-inner"></div>
+          </div>
+        </div>
+      );
+      setIsMenuOpen(false);
+    }
   }
 
   return (
@@ -77,39 +100,42 @@ function NavBar() {
           <div className="mobile-display">
             <div>
               {currentUser.displayName ? (
-                <img src={currentUser.photoURL} alt="user" className="user-img" referrerPolicy="no-referrer" />
-              ) : ""}
+                <img
+                  src={currentUser.photoURL}
+                  alt="user"
+                  className="user-img"
+                  referrerPolicy="no-referrer"
+                />
+              ) : (
+                ""
+              )}
             </div>
-            <button onClick={toggleMenu} className="mobile-menu-btn" >
-              <div className="hamburger hamburger--collapse">
-                <div className="hamburger-box">
-                  <div className="hamburger-inner"></div>
-                </div>
-              </div>
+            <button onClick={toggleMenu} className="mobile-menu-btn">
+              {mobileMenuIcon}
             </button>
             {isMenuOpen && (
               <div className="mobile-menu">
-              <ul className="mobile-nav-list">
-                <Link to="/">Home</Link>
-                <Link to="/pages/404">404 Page</Link>
-                <Link to="/pages/errorBoundary">Error Boundary</Link>
-              </ul>
-              <div className="mobile-user-space">
-                {currentUser.displayName ? (
-                  <>
+                <ul className="mobile-nav-list">
+                  <Link to="/">Home</Link>
+                  <Link to="/pages/404">404 Page</Link>
+                  <Link to="/pages/errorBoundary">Error Boundary</Link>
+                </ul>
+                <div className="mobile-user-space">
+                  {currentUser.displayName ? (
+                    <>
+                      <p className="user">
+                        Hi <span>{currentUser.displayName}</span>
+                      </p>
+                    </>
+                  ) : (
                     <p className="user">
-                      Hi <span>{currentUser.displayName}</span>
+                      Hi <span>{currentUser.email}</span>
                     </p>
-                  </>
-                ) : (
-                  <p className="user">
-                    Hi <span>{currentUser.email}</span>
-                  </p>
-                )}
+                  )}
                   <button className="logout" onClick={handleLogout}>
                     Log out
                   </button>
-              </div>
+                </div>
               </div>
             )}
           </div>
