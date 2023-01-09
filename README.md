@@ -125,6 +125,8 @@ export const googleProvider = new GoogleAuthProvider();
 
 ```
 
+### useContext feature
+
 ```js
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithRedirect, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
