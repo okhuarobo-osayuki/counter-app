@@ -8,7 +8,7 @@
 - [Built with](#built-with)
 - [Features](#features)
   - [Feature added](#feature-added)
-- [Features to add](#features-to-add)
+- [Possible features to add](#possible-features-to-add)
 - [Links](#links)
 - [Author](#author)
 
