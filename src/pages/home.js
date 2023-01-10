@@ -17,7 +17,7 @@ function Home() {
           name="description"
           content="Counter App using React hooks and custom hooks to increase, decrease, reset and set value of the count."
         />
-        <link rel="canonical" href="/home" />
+        <link rel="canonical" href="/" />
       </Helmet>
       <Suspense fallback={<Loading />}>
         <NavBar />
