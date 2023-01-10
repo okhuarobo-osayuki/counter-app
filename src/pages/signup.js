@@ -5,6 +5,7 @@ import "../assets/css/navbar.css";
 import { AuthContext } from "../context/authContext";
 import { auth, googleProvider } from "../assets/config/firebase";
 import { sendEmailVerification } from "firebase/auth";
+import { Helmet } from "react-helmet-async";
 
 function Signup() {
   const emailRef = useRef();
@@ -53,6 +54,14 @@ function Signup() {
 
   return (
     <>
+    <Helmet>
+        <title>Sign Up</title>
+        <meta
+          name="description"
+          content="Sign up to use the counter app"
+        />
+        <link rel="canonical" href="/pages/signup" />
+      </Helmet>
     <nav>
         <div className="logo">
           Counter App
