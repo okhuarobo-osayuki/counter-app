@@ -221,6 +221,7 @@ The following are some examples of potential features that could be added to the
 
 - Solution Code URL: [React-Counter-App-Code](https://github.com/okhuarobo-osayuki/counter-app)
 - Live Site URL: <https://counter-app-eight-silk.vercel.app/>
+- Link to article written: ![Counter app built using Reactjs and Firebase](https://medium.com/@osayukir/counter-app-built-using-reactjs-and-firebase-26a55f1d4903)
 
 ## Author
 
