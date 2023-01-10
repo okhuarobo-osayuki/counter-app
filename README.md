@@ -201,7 +201,7 @@ When the user logs out, the user is redirected back to the login page.
 
 ## Features to add
 
-Some possible features to add are as follows:
+The following are some examples of potential features that could be added to the application:
 
 - A function that confirms if the user has been authenticated via the link sent to the user's mailbox
 - A feature that allows the user to reset their password
